@@ -22,7 +22,7 @@ esac
 
 # 低于7.2的固件不能安装
 firmware_version=`nvram get extendno|cut -d "X" -f2|cut -d "-" -f1|cut -d "_" -f1`
-firmware_comp=`versioncmp $firmware_version 7.2`
+firmware_comp=`versioncmp $firmware_version RTAC68U`
 if [ "$firmware_comp" == "1" ];then
 	echo_date 本插件不支持X7.2以下的固件版本，当前固件版本$firmware_version，请更新固件！
 	echo_date 退出安装！
